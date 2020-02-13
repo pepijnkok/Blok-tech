@@ -10,4 +10,3 @@ function sum() {
 }
 
 sum();
-ddd
