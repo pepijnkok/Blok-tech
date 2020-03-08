@@ -24,12 +24,20 @@ var data = [
 }  
 ]
 
-app.get('/', function(req, res){
-    res.render('pages/index',{
+const persons = [
+  {
+    name: 'henk'
+  },
+  {
+    name: 'jan'
+  },
+  {
+    name: 'piet'
+  }
+]
 
-  
-
-    });
+app.get('/profile/:id', function(req, res){
+    res.render('pages/index', persons[req.params.id]);
 });
 
 app.get('/index', function(req, res){
