@@ -1,5 +1,5 @@
 # Feature
-Mijn feature is het profiel van mensen bekijken en deze liken of disliken door middel van een swipe.
+Mijn feature is het profiel van mensen bekijken en deze liken of disliken door middel van een swipe on de telefoon een en klik op de desktop.
 
 # Database
 Ik gebruik Mongodb en ik heb deze lokaal geïnstalleerd.
@@ -18,7 +18,7 @@ npm install
 
 Start de applicatie
 ```
-nodemon server.js
+node server.js
 ```
 
 # Packages
