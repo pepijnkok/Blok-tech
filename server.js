@@ -1,28 +1,19 @@
 const express = require('express');
-const app = express();
-const ejs = require("ejs");
-// const slug = require("slug");
-// const bodyParser = require("bodyParser");
-const port = 3000;
+const app = express()
+const ejs = require("ejs")
+const mongo = require('mongodb')
+// const slug = require("slug")
+// const bodyParser = require("bodyParser")
+const port = 3000
+
+require ('dotenv').config()
 
 
+// EJS
 app.set("view engine", "ejs")
 app.use(express.static("views"))
 
 
-var data = [
-  {
-  id: "batman",
-  title: "dark knight",
-  description: "Gotham city"
-},
-
-{
-  id: "spiderman",
-  title: "Far from home",
-  summary: "in europe"
-}  
-]
 
 const persons = [
   {
@@ -37,24 +28,10 @@ const persons = [
 ]
 
 app.get('/profile/:id', function(req, res){
-    res.render('pages/index', persons[req.params.id]);
+    res.render('views/match', persons[req.params.id]);
 });
 
-app.get('/index', function(req, res){
-    res.render('pages/index',{
 
-     
-
-    });
-});
-
-app.get('/matching', function(req, res){
-    res.render('pages/matching',{
-
-   
-
-    });
-});
 
 
 
