@@ -1,10 +1,18 @@
-# Feature
+## Table of Content
+- Feature
+- Database
+- Installeren
+- Packages
+- Wiki
+- License
+
+## Feature
 Mijn feature is het profiel van mensen bekijken en deze liken of disliken door middel van een swipe on de telefoon een en klik op de desktop.
 
-# Database
+## Database
 Ik gebruik Mongodb en ik heb deze lokaal geïnstalleerd.
 
-# Installeren
+## Installeren
 Clone de repository in de terminal
 
 ```
@@ -21,7 +29,7 @@ Start de applicatie
 node server.js
 ```
 
-# Packages
+## Packages
 Dit zijn depackages die ik heb gebruikt.
 
 - Express
@@ -36,7 +44,11 @@ Dit zijn depackages die ik heb gebruikt.
 
 - dotenv https://www.npmjs.com/package/dotenv
 
-# Wiki
+## Wiki
 
 Ik heb de volgende wiki aangemaakt waarin al mijn bevinden en onderzoek staan van dit project
 https://github.com/pepijnkok/Blok-Tech/wiki
+
+## License
+
+[MIT License](https://github.com/pepijnkok/blok-tech/blob/master/LICENSE.md) © [Pepijn Kok](https://github.com/pepijnkok)
