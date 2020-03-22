@@ -11,6 +11,7 @@
 - License
 
 ## Description
+Dit is mijn dating app die ik heb gemaakt voor Project tech. Dit is een project voor mijn studie Communicatie en Multimedia Design die ik volg aan de Hogeschool van Amsterdam.
 Traveldate is een dating app die zich richt op mensen die veel reizen en avontuurlijk zijn.
 Hierdoor kunnen deze mensen een eigen traveldate krijgen door een persoon te vinden die de zelfde culturele interesses als zij hebben en samen op reis kunnen gaan.
 Op mijn website kan je het profiel van mensen bekijken en deze liken of disliken door middel van een swipe op de telefoon een en klik op de desktop.
