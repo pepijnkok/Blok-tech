@@ -37,13 +37,13 @@ node server.js
 ```
 
 ## Packages
-Dit zijn depackages die ik heb gebruikt.
+Dit zijn de packages die ik heb gebruikt.
 
 - Express
 
 - EJS  https://www.npmjs.com/package/ejs
 
-- Body Parser https://www.npmjs.com/package/express-session
+- Body Parser https://www.npmjs.com/package/body-parser
 
 - Slug https://www.npmjs.com/package/slug
 
