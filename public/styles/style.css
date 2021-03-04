@@ -1,0 +1,219 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: catamaran;
+    background-image:url(/images/banner.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 1em;
+
+}
+
+h1 {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    font-size: 8vw;
+    font-family: catamaran;
+    color: white;
+    z-index: 1;
+    text-align: center;
+}
+
+/*Header*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around
+
+}
+
+
+header nav ul li {
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+
+header nav ul li:first-child {
+    width: 100%;
+}
+
+
+header nav img {
+    height: 2rem;
+}
+
+
+@media and screen (min-width:44em) {
+    header nav ul {
+        flex-wrap: nowrap;
+    }
+
+    header nav ul li:first-child {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    a {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+}
+
+
+header .current a {
+    color: #06c;
+    font-weight: bold;
+}
+
+.closenav {
+    font-size: 1.8em;
+    padding: 0 0 0 1em;
+    margin: 0;
+
+}
+
+/*Responsive logo in header*/
+.imagetext {
+    display: none;
+}
+
+
+@media screen and (min-width: 33em) {
+    header nav ul li:first-child {
+        width: auto;
+        margin-right: auto;
+    }
+
+    .imagetext {
+        display: block;
+    }
+}
+
+
+/* Contact form*/
+form {
+    max-width: 35em;
+    margin: auto;
+    padding: 2em;
+
+    display: grid;
+    grid-gap: 1em;
+
+    background-color:white;
+
+    border-radius: 1em;
+}
+
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+legend {
+    font-weight: bold;
+    font-size: 2em;
+    color: #0D0D0D;
+    padding: 0 0 1.5rem 0;
+}
+
+label {
+    display: block;
+    color: #0D0D0D;
+    font-family: ;
+    padding: 0 0 .5rem 0;
+}
+
+
+input,
+textarea {
+    width: 100%;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    border-color: #3654a5;
+    border-radius: 2em;
+    outline: none;
+}
+
+
+textarea {
+    height: 220px;
+    margin: 0;
+}
+
+
+button {
+    font-family: catamaran;
+    height: 2.5em;
+    display: block;
+    color: white;
+    font-weight: 400;
+    outline: none;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 1em;
+    background-color: #3654a5;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin: 1em 0 0 2em;
+}
+
+
+.overlap {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 60% 20% 20% 50% ;
+    margin-bottom: 3em;
+    padding: 0;
+}
+
+a {
+    display: grid;
+    grid-column: 3 / 3;
+    grid-row: 8 / 8;
+    font-family: catamaran;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    text-decoration: none;
+}
+
+button.account { 
+    border-radius: 1em;
+    font-size: 1.3em;
+    text-align: center;
+}

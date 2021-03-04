@@ -1,43 +1,27 @@
-const express = require('express');
+const express = require('express')
 const app = express()
-const ejs = require("ejs")
-const mongo = require('mongodb')
-// const slug = require("slug")
-// const bodyParser = require("bodyParser")
-const port = 3000
+const path = require('path')
+const PORT = 3000
+const router = require('./route/router')
 
+// MongoDB
+const mongo = require('mongodb')
+
+// Dotenv
 require ('dotenv').config()
 
+// EJS setup
+app.set('view engine', 'ejs')
+// Set de views folder
+app.set('views', path.join(__dirname, 'views'))
+// Gebruik statische files vanuit de public folder
+app.use(express.static(__dirname + '/public'))
 
-// EJS
-app.set("view engine", "ejs")
-app.use(express.static("views"))
-
-
-
-const persons = [
-  {
-    name: 'henk'
-  },
-  {
-    name: 'jan'
-  },
-  {
-    name: 'piet'
-  }
-]
-
-app.get('/profile/:id', function(req, res){
-    res.render('views/match', persons[req.params.id]);
-});
+// Gebruik de router wanneer je op de index pagina komt
+app.use('/', router)
 
 
-
-
-
-
-app.use(function(req, res) {
-  res.send("4044: Page not found", 404);
-});
-
-app.listen(port, () => console.log(`app running on port: ${port}`));
+// Express luisterd naar port 3000
+app.listen(PORT, () => {
+   console.log(`http://localhost:${PORT}`)
+})
