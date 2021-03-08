@@ -90,7 +90,7 @@ button {
     background-color: #3654a5;
 }
 
-/* random */
+/* main */
 ul {
     margin: 0;
     padding: 0;
@@ -98,6 +98,9 @@ ul {
     margin: 1em 0 0 2em;
 }
 
+li {
+    list-style: none;
+    }
 
 .overlap {
     display: grid;
@@ -118,10 +121,6 @@ a {
     text-decoration: none;
 }
 
-.imagesmall {
-    height: auto;
-    width: 10em;
-}
 
 p {
     font-size: 2em;
@@ -129,6 +128,8 @@ p {
     text-align: center;
 }
 
-li {
-list-style: none;
+
+.imagesmall {
+    height: auto;
+    width: 10em;
 }
