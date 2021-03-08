@@ -12,7 +12,7 @@ require('dotenv').config()
 
 const db = mongoose.connection
 
-//mongoose connecten met de database
+// mongoose connecten met de database
 mongoose.connect(process.env.DB_URI, {
    useNewUrlParser: true, 
    useUnifiedTopology: true
@@ -24,15 +24,15 @@ db.on('connected', () => {
 
 
 
-// EJS setup
+// ejs setup
 app.set('view engine', 'ejs');
-// Set de views folder
+// set de views folder
 app.set('views', path.join(__dirname, 'views'));
-// Gebruik statische files vanuit de public folder
+// gebruik statische files vanuit de public folder
 app.use(express.static(__dirname + '/public'));
 
 
-//paginas inladen
+// paginas inladen
 app.get('/', function (req, res) {
    res.render('pages/index', {
        title: 'Travel Date',  
@@ -51,7 +51,7 @@ app.get('/registreren', function (req, res) {
    })
 });
 
-
+// als er niks wordt gevonden voor pagina geef error pagina
 app.get('*', function (req, res) {
    res.status(404).render('pages/404', {
        url: req.url,
@@ -60,7 +60,7 @@ app.get('*', function (req, res) {
 });
 
 
-// Express luisterd naar port 3000
+// express luisterd naar port 3000
 app.listen(PORT, () => {
 console.log(`http://localhost:${PORT}`)
 });
