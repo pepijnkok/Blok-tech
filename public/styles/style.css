@@ -228,3 +228,7 @@ p {
     color: white;
     text-align: center;
 }
+
+li {
+list-style: none;
+}
