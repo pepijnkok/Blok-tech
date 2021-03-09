@@ -47,7 +47,7 @@ npm install
 node server.js
 ```
 
-7. Open de server op localhost:3000
+7. Open de server op localhost:6000
 ![localhost](https://user-images.githubusercontent.com/59015908/110480206-88bf3d80-80e6-11eb-9522-59f1a7134051.png)
 
 
