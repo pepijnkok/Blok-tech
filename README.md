@@ -17,45 +17,56 @@ Hierdoor kunnen deze mensen een eigen traveldate krijgen door een persoon te vin
 Op mijn website kan je het profiel van mensen bekijken en deze liken of disliken door middel van een swipe op de telefoon een en klik op de desktop.
 
 ## Database
-Ik gebruik Mongodb en ik heb deze lokaal geïnstalleerd.
+Ik gebruik Mongodb met MongoDB Compass, hiernaast heb ik mongoose erbij geinstalleerd.
 
 ## Installeren
-Clone de repository in de terminal
+1. Open de terminal
 
+2. Clone de repository
 ```
 git clone https://github.com/pepijnkok/blok-tech
 ```
  
-Ga hierna in de geclonede repository en installeer de packages
+3. Ga hierna in de geclonede repository
+```
+cd /blok-tech
+```
+
+4. Maak een .env bestaan aan
+```
+touch .env
+```
+
+5. Installeer de packages
 ```
 npm install
 ```
 
-Start de applicatie
+6. Start de applicatie
 ```
 node server.js
 ```
 
+7. Open de server op localhost:3000
+![localhost](https://user-images.githubusercontent.com/59015908/110480206-88bf3d80-80e6-11eb-9522-59f1a7134051.png)
+
+
 ## Packages
 Dit zijn de packages die ik heb gebruikt.
 
-- Express
+- Express https://expressjs.com
 
 - EJS  https://www.npmjs.com/package/ejs
 
 - Body Parser https://www.npmjs.com/package/body-parser
-
-- Slug https://www.npmjs.com/package/slug
 
 - Mongodb https://www.npmjs.com/package/mongodb
 
 - dotenv https://www.npmjs.com/package/dotenv
 
 ## Wiki
-
 Ik heb de volgende wiki aangemaakt waarin al mijn bevinden en onderzoek staan van dit project
 https://github.com/pepijnkok/Blok-Tech/wiki
 
 ## License
-
 [MIT License](https://github.com/pepijnkok/blok-tech/blob/master/LICENSE.md) © [Pepijn Kok](https://github.com/pepijnkok)
