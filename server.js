@@ -4,6 +4,8 @@ const app = express()
 const ejs = require('ejs')
 const path = require('path')
 const port = 3000
+
+
 const mongo = require('mongodb')
 const mongoose = require('mongoose')
 
@@ -22,6 +24,10 @@ db.on('connected', () => {
    console.log('Mongoose connected')
 })
 
+// Create user collection with schema
+const User = mongoose.model('User',{name: String,email:String,password:String});
+
+
 // Ejs setup
 app.set('view engine', 'ejs')
 // Telling app to take the forms and acces them inside of the request variable inside of the post method
@@ -32,6 +38,16 @@ app.set('views', path.join(__dirname, 'views'))
 // Use static files from the public folder
 app.use(express.static(__dirname + '/public'))
 
+app.get('/login',(req,res) =>{
+   res.render('pages/login',{
+      title:'login'
+   })
+})
+app.get('/register',(req,res) =>{
+   res.render('pages/register',{
+      title:'login'
+   })
+})
 
 // Loading pages
 app.get('/', (req, res) => {
@@ -40,33 +56,57 @@ app.get('/', (req, res) => {
    })
 })
 
-app.get('/login', (req, res) => {
-   res.render('pages/login', {
-       title: 'Login',
+app.post('/loginUser', (req, res) => {
+   const email = req.body.email;
+   const password = req.body.password;
+   try{
+   User.findOne({email:email},function(err, user){
+      if(user){
+      if(user.password == password){
+         console.log('Logged IN')
+         res.redirect('/home')
+         return;
+      } else{
+         console.log('logged failed')
+      }
+      }
+      console.log('No user');
+      res.redirect('/login')
+      return;
    })
+   }catch(e){
+      console.log('No such user found: ' + e);
+
+   }
 })
 
-app.post('/login', (req, res) => {
-  
-})
 
-
-app.get('/register', (req, res) => {
-   res.render('pages/register', {
-       title: 'Register',
+app.post('/registerUser', (req, res) => {
+   
+   try {
+      const newUser  = new User({
+         name: req.body.name,
+         email: req.body.email,
+         password: req.body.password
+      })
+      newUser.save().then(() =>{
+         console.log('Added User');
+         res.redirect('/login')
+         return;
+         
    })
+      
+   } catch (error) {
+      console.log(error);
+   }
 })
 
-app.post('/register', (req, res) => {
-  
+app.get('/home', (req, res, data) => {
+   console.log(data)
+   res.render('pages/home', { 
+      title: 'Home' 
+   })  
 })
-
-
-
-
-
-
-
 
 
 // If there is no page found give the user an error page instead

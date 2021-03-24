@@ -4,7 +4,7 @@
     <title>Login</title>
     <h1>Login</h1>
 
-    <form action="/login" method="POST">
+    <form action="/loginUser" method="POST">
       <div>
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
@@ -14,8 +14,8 @@
         <input type="password" id="password" name="password" required>
       </div>
       <button type="submit">Login</button>
-      <button type="submit"><a href="/register">Register</a></button>
     </form>
+    <button type="submit"><a href="/register">Register</a></button>
  
     
 <%- include('../partials/tail') %>
