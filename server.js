@@ -102,11 +102,11 @@ app.post('/registerUser', (req, res) => {
 })
 
 app.get('/home', (req, res, data) => {
+   // Make connection to database
    console.log(data)
-   res.render('pages/home', { 
-      title: 'Home' 
+   res.render('pages/home', { name: req.body.name, title: 'Home' })
+     
    })  
-})
 
 
 // If there is no page found give the user an error page instead
