@@ -24,6 +24,9 @@ db.on('connected', () => {
 
 // Ejs setup
 app.set('view engine', 'ejs')
+// Telling app to take the forms and acces them inside of the request variable inside of the post method
+app.use(express.urlencoded({ extended: false }))
+
 // Set the views folder
 app.set('views', path.join(__dirname, 'views'))
 // Use static files from the public folder
@@ -43,11 +46,28 @@ app.get('/login', (req, res) => {
    })
 })
 
-app.get('/registreren', (req, res) => {
+app.post('/login', (req, res) => {
+  
+})
+
+
+app.get('/register', (req, res) => {
    res.render('pages/register', {
        title: 'Register',
    })
 })
+
+app.post('/register', (req, res) => {
+  
+})
+
+
+
+
+
+
+
+
 
 // If there is no page found give the user an error page instead
 app.get('*', (req, res) => {

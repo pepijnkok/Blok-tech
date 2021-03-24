@@ -4,21 +4,18 @@
     <title>Login</title>
     <h1>Login</h1>
 
-    <% if (messages.error) { %>
-      <%= messages.error %>
-    <% } %>
-
     <form action="/login" method="POST">
       <div>
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
       </div>
       <div>
-        <label for="password">Wachtwoord</label>
+        <label for="password">password</label>
         <input type="password" id="password" name="password" required>
       </div>
       <button type="submit">Login</button>
+      <button type="submit"><a href="/register">Register</a></button>
     </form>
-    <a href="/registreren">Registreren</a>
+ 
     
 <%- include('../partials/tail') %>

@@ -1,12 +1,12 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<title>Registeren</title>
-<h1>Registreren</h1>
+<title>Register</title>
+<h1>Sign up now!</h1>
 
-<form action="/registreren" method="POST">
+<form action="/register" method="POST">
   <div>
-    <label for="name">Naam</label>
+    <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
   </div>
   <div>
@@ -14,11 +14,12 @@
     <input type="email" id="email" name="email" required>
   </div>
   <div>
-    <label for="password">Wachtwoord</label>
+    <label for="password">Password</label>
     <input type="password" id="password" name="password" required>
   </div>
-  <button type="submit">Registreren</button>
+  <button type="submit">Register</button>
+  <button type="submit"><a href="/login">Login</a></button>
 </form>
-<a href="/login">Login</a>
+
    
 <%- include('../partials/tail') %>
