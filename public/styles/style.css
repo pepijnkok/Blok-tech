@@ -23,7 +23,7 @@ h1 {
     display: grid;
     grid-column: 1 / -1;
     grid-row: 2 / 3;
-    font-size: 8vw;
+    font-size: 6vw;
     font-family: catamaran;
     color: white;
     z-index: 1;
@@ -88,6 +88,17 @@ button {
     border: none;
     border-radius: 1em;
     background-color: #3654a5;
+}
+
+.button2 {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    display: block;
+    width: 34%;
+
+    background-color: #252525;;
 }
 
 /* main */
