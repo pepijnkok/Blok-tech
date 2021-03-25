@@ -67,15 +67,15 @@ app.post('/loginUser', (req, res) => {
          res.redirect('/home')
          return;
       } else{
-         console.log('logged failed')
+         console.log('Wrong password')
       }
       }
-      console.log('No user');
+      console.log('User not found')
       res.redirect('/login')
       return;
    })
-   }catch(e){
-      console.log('No such user found: ' + e);
+   } catch(e){
+      console.log('Log in failed: ' + e)
 
    }
 })
@@ -101,12 +101,18 @@ app.post('/registerUser', (req, res) => {
    }
 })
 
-app.get('/home', (req, res, data) => {
-   // Make connection to database
-   console.log(data)
-   res.render('pages/home', { name: req.body.name, title: 'Home' })
-     
+app.get('/home', (req, res, ) => {
+   res.render('pages/home', { 
+      title: 'Home' 
+      })  
    })  
+
+   app.get('/update', (req, res, ) => {
+      res.render('pages/update', { 
+         title: 'Update name' 
+         })  
+      })  
+   
 
 
 // If there is no page found give the user an error page instead

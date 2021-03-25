@@ -1,7 +1,10 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<h1>Hi <%= name %></h1>
+<h1>Hi Pepijn</h1>
+<form action="update">
+  <button type="submit">Change your name</button>
+</form>
 <form action="/logout?_method=DELETE" method="POST">
   <button type="submit">Log Out</button>
 </form>
