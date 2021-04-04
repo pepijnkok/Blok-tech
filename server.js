@@ -7,11 +7,20 @@ const port = 3000
 
 const mongo = require('mongodb')
 const mongoose = require('mongoose')
+const validator = require('validator');
+
+// Import schema for the user
+const User = require('./models/userModel');  
 
 require('dotenv').config()
 
 
 const db = mongoose.connection
+
+// Fix for deprecation warning
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
 // Connect mongoose with the database
 mongoose.connect(process.env.DB_URI, {
@@ -19,13 +28,10 @@ mongoose.connect(process.env.DB_URI, {
    useUnifiedTopology: true
 })
 
+
 db.on('connected', () => { 
    console.log('Mongoose connected')
 })
-
-// Create user collection with schema
-const User = mongoose.model('User',{name: String,email:String,password:String});
-
 
 // Ejs setup
 app.set('view engine', 'ejs')
