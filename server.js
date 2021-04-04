@@ -5,7 +5,6 @@ const ejs = require('ejs')
 const path = require('path')
 const port = 3000
 
-
 const mongo = require('mongodb')
 const mongoose = require('mongoose')
 
@@ -38,22 +37,57 @@ app.set('views', path.join(__dirname, 'views'))
 // Use static files from the public folder
 app.use(express.static(__dirname + '/public'))
 
-app.get('/login',(req,res) =>{
-   res.render('pages/login',{
-      title:'login'
-   })
-})
-app.get('/register',(req,res) =>{
-   res.render('pages/register',{
-      title:'login'
-   })
-})
 
 // Loading pages
 app.get('/', (req, res) => {
    res.render('pages/index', {
        title: 'Travel Date',  
    })
+})
+
+app.get('/register',(req,res) =>{
+   res.render('pages/register',{
+      title:'login'
+   })
+})
+
+app.get('/login',(req,res) =>{
+   res.render('pages/login',{
+      title:'login'
+   })
+})
+
+app.get('/home', (req, res, ) => {
+   res.render('pages/home', { 
+      title: 'Home' 
+      })  
+   })  
+
+   app.get('/update', (req, res, ) => {
+      res.render('pages/update', { 
+         title: 'Update name' 
+         })  
+      })  
+
+// Functions
+app.post('/registerUser', (req, res) => {
+   
+   try {
+      const newUser  = new User({
+         name: req.body.name,
+         email: req.body.email,
+         password: req.body.password
+      })
+      newUser.save().then(() =>{
+         console.log('Added User');
+         res.redirect('/login')
+         return;
+         
+   })
+      
+   } catch (error) {
+      console.log(error);
+   }
 })
 
 app.post('/loginUser', (req, res) => {
@@ -78,42 +112,7 @@ app.post('/loginUser', (req, res) => {
       console.log('Log in failed: ' + e)
 
    }
-})
-
-
-app.post('/registerUser', (req, res) => {
-   
-   try {
-      const newUser  = new User({
-         name: req.body.name,
-         email: req.body.email,
-         password: req.body.password
-      })
-      newUser.save().then(() =>{
-         console.log('Added User');
-         res.redirect('/login')
-         return;
-         
-   })
-      
-   } catch (error) {
-      console.log(error);
-   }
-})
-
-app.get('/home', (req, res, ) => {
-   res.render('pages/home', { 
-      title: 'Home' 
-      })  
-   })  
-
-   app.get('/update', (req, res, ) => {
-      res.render('pages/update', { 
-         title: 'Update name' 
-         })  
-      })  
-   
-
+}) 
 
 // If there is no page found give the user an error page instead
 app.get('*', (req, res) => {
@@ -122,7 +121,6 @@ app.get('*', (req, res) => {
        title: 'Error 404',
    })
 })
-
 
 // Express listens to port 3000
 app.listen(port, () => console.log('Example app listening on port ${port}!'))
