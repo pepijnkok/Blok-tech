@@ -6,13 +6,13 @@
 - Description
 - Database
 - Install
-- Database visualisation
+- Database Visualisation
 - Packages
 - Wiki
 - License
 
 ## Description
-This is my matching app I made for Project tech. This is a project for my study Communication and Multimedia Design at the Amsterdam University of Applied Sciences
+This is my matching app I made for Project tech. This is a project for my study Communication and Multimedia Design at the Amsterdam University of Applied Sciences.
 Travelbuddy is a matching app that has a focus on people who like to travel and are adventurous.
 People can find their own travelbuddy with the same interest and go on a journey together.
 
