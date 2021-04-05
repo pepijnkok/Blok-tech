@@ -14,7 +14,6 @@ const User = require('./models/userModel');
 
 require('dotenv').config()
 
-
 const db = mongoose.connection
 
 // Fix for deprecation warning
@@ -119,6 +118,17 @@ app.post('/loginUser', (req, res) => {
 
    }
 }) 
+
+app.post('/updateName', (req, res) => {
+User.findOneAndUpdate({name: req.body.name}, {name: req.body.newName}, {new: true}, (error, data) => {
+   if (error){
+      console.log(error)
+   } else {
+      res.redirect('/home')
+   }
+})
+})
+
 
 // If there is no page found give the user an error page instead
 app.get('*', (req, res) => {
