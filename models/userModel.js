@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 // Source: https://mongoosejs.com/docs/guide.html
 // Making a new Schema
 const userSchema = new Schema({
+	
 	name: {
 		type: String,
 		required: true,

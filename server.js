@@ -44,19 +44,19 @@ app.use(express.static(__dirname + '/public'))
 // Loading pages
 app.get('/', (req, res) => {
    res.render('pages/index', {
-       title: 'Travel Date',  
+       title: 'Travelbuddy',  
    })
 })
 
 app.get('/register',(req,res) =>{
    res.render('pages/register',{
-      title:'login'
+      title:'Register'
    })
 })
 
 app.get('/login',(req,res) =>{
    res.render('pages/login',{
-      title:'login'
+      title:'Login'
    })
 })
 
@@ -71,6 +71,12 @@ app.get('/home', (req, res, ) => {
          title: 'Update name' 
          })  
       })  
+
+      app.get('/delete', (req, res, ) => {
+         res.render('pages/delete', { 
+            title: 'Delete account' 
+            })  
+         })  
 
 // Functions
 app.post('/registerUser', (req, res) => {
@@ -111,8 +117,8 @@ app.post('/loginUser', (req, res) => {
       res.redirect('/login')
       return;
    })
-   } catch(e){
-      console.log('Log in failed: ' + e)
+   } catch(error){
+      console.log('Log in failed: ' + error)
 
    }
 }) 
@@ -126,6 +132,16 @@ User.findOneAndUpdate({name: req.body.name}, {name: req.body.newName}, {new: tru
    }
 })
 })
+
+app.post('/deleteAccount', (req, res) => {
+   User.findOneAndDelete({name: req.body.name}, (error, data) => {
+      if (error){
+         console.log(error)
+      } else {
+         res.redirect('/register')
+      }
+   })
+   })
 
 
 // If there is no page found give the user an error page instead

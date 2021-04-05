@@ -2,14 +2,14 @@
 <%- include('../partials/header') %>
 
 <h1>Hi Pepijn</h1>
-  <form action="/updateName" method=post>
-    <label>Your old username <input name=name></label>
-    <label>Your new username <input name=newName></label>
+  <form action="/updateName" method="POST">
+    <label>Input your old username <input name=name></label>
+    <label>Input your new username <input name=newName></label>
   <button type="submit">Update your name</button>
 </form>
 
-<form action="goBack">
-    <button type="submit">Go back</button>
-  </form>
+    <button type="submit" class="button2"><a href="/home">Go back</a></button>
+
+ 
 
 <%- include('../partials/tail') %>

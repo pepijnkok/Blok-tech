@@ -110,6 +110,17 @@ button {
     width: 7%;
 }
 
+.button4 {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    display: block;
+    width: 100%;
+
+    background-color: #3654a5;
+}
+
 /* main */
 ul {
     margin: 0;
