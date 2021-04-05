@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-// Structure in the collection 
+// Structure for the collection 
 const Schema = mongoose.Schema;
 
-// https://mongoosejs.com/docs/guide.html
-// Schema structure how to save in the collection
-// Objects with a string and all are required
+// Source: https://mongoosejs.com/docs/guide.html
+// Making a new Schema
 const userSchema = new Schema({
 	name: {
 		type: String,
