@@ -54,6 +54,7 @@ This is the datamodel that you can see in my database.
 
 ```javascript
 const mongoose = require('mongoose');
+// Using a validator to validate the email 
 const validator = require('validator');
 
 // Structure for the collection 
