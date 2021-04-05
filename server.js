@@ -134,7 +134,7 @@ User.findOneAndUpdate({name: req.body.name}, {name: req.body.newName}, {new: tru
 })
 
 app.post('/deleteAccount', (req, res) => {
-   User.findOneAndDelete({name: req.body.name}, (error, data) => {
+   User.findOneAndDelete({email: req.body.email}, (error, data) => {
       if (error){
          console.log(error)
       } else {
