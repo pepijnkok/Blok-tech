@@ -6,19 +6,20 @@ const port = 3000
 
 const mongo = require('mongodb')
 const mongoose = require('mongoose')
-const validator = require('validator');
-
-// Import schema for the user
-const User = require('./models/userModel');  
+const validator = require('validator')
 
 require('dotenv').config()
 
+// Import schema for the user
+const User = require('./models/userModel')
+
+// Mongodb connect to Mongoose
 const db = mongoose.connection
 
-// Fix for deprecation warning
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
+// Fix for the Mongoose deprecation warning
+mongoose.set('useNewUrlParser', true)
+mongoose.set('useFindAndModify', false)
+mongoose.set('useCreateIndex', true)
 
 // Connect mongoose with the database
 mongoose.connect(process.env.DB_URI, {
@@ -26,7 +27,7 @@ mongoose.connect(process.env.DB_URI, {
    useUnifiedTopology: true
 })
 
-
+// Check if Mongoose is connected
 db.on('connected', () => { 
    console.log('Mongoose connected')
 })
