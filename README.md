@@ -51,7 +51,7 @@ node server.js
 ![localhost](https://user-images.githubusercontent.com/59015908/110480206-88bf3d80-80e6-11eb-9522-59f1a7134051.png)
 
 ## Database visualisation
-This is the datamodel that you can see in my database.
+This is the datamodel that I use for my database.
 
 ```javascript
 const mongoose = require('mongoose');
