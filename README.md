@@ -6,6 +6,7 @@
 - Description
 - Database
 - Install
+- Database visualisation
 - Packages
 - Wiki
 - License
@@ -49,7 +50,7 @@ node server.js
 7. Open the server on localhost:3000
 ![localhost](https://user-images.githubusercontent.com/59015908/110480206-88bf3d80-80e6-11eb-9522-59f1a7134051.png)
 
-## Database visualisation.
+## Database visualisation
 This is the datamodel that you can see in my database.
 
 ```javascript
@@ -87,7 +88,7 @@ const userSchema = new Schema({
 ```
 
 ## Packages
-Dit zijn de packages die ik heb gebruikt.
+These are the packages that I used in this project
 
 - Express https://expressjs.com
 
@@ -95,7 +96,9 @@ Dit zijn de packages die ik heb gebruikt.
 
 - Body Parser https://www.npmjs.com/package/body-parser
 
-- Mongodb https://www.npmjs.com/package/mongodb
+- Mongoose https://www.npmjs.com/package/mongoose
+
+- Mongoose Validator https://www.npmjs.com/package/mongoose-validator
 
 - dotenv https://www.npmjs.com/package/dotenv
 

@@ -2,7 +2,6 @@ const bodyParser = require ('body-parser')
 const express = require('express')
 const app = express()
 const ejs = require('ejs')
-const path = require('path')
 const port = 3000
 
 const mongo = require('mongodb')
@@ -37,8 +36,6 @@ app.set('view engine', 'ejs')
 // Telling app to take the forms and acces them inside of the request variable inside of the post method
 app.use(express.urlencoded({ extended: false }))
 
-// Set the views folder
-app.set('views', path.join(__dirname, 'views'))
 // Use static files from the public folder
 app.use(express.static(__dirname + '/public'))
 
